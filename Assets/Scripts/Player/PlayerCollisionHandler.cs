@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Collision : MonoBehaviour
+public class PlayerCollisionHandler : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
@@ -11,6 +11,5 @@ public class Collision : MonoBehaviour
             ScoreManager.instance.score++;
             Debug.Log(ScoreManager.instance.score);
         }
-        
     }
 }

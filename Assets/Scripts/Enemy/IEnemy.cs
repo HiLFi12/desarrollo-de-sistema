@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class IEnemy
+public abstract class IEnemy : MonoBehaviour
 {
     public int health;
     public string enemyName;

@@ -22,13 +22,18 @@ public EnemyFactory enemyFactory;
 
     void SpawnEnemy()
     {
-        if (spawnPoints.Length > 0 || enemyFactory == null)
+        if (enemyFactory == null || spawnPoints == null || spawnPoints.Length == 0)
         {
+            Debug.LogWarning("EnemySpawner: Falta asignar enemyFactory o spawnPoints está vacío.");
             return;
         }
 
         Transform randomPoint = spawnPoints[Random.Range (0, spawnPoints.Length)];
-        enemyFactory.CreateEnemy(randomPoint.position, Quaternion.identity);
+        var enemy = enemyFactory.CreateEnemy(randomPoint.position, Quaternion.identity);
+        if (enemy == null)
+        {
+            Debug.LogWarning("EnemyFactory no creó un enemigo. Revisa enemyTypes y prefabs.");
+        }
 
     }
 }

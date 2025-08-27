@@ -14,7 +14,14 @@ public class Vampire : IEnemy
     public override void Attack()
     {
         Debug.Log($"{enemyName} ataca lentamente");
-        throw new System.NotImplementedException();
+    }
+
+       private void OnCollisionEnter(UnityEngine.Collision other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Attack();
+        }
     }
 }
 

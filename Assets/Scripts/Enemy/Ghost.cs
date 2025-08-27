@@ -14,6 +14,13 @@ public class Ghost : IEnemy
     public override void Attack()
     {
         Debug.Log($"{enemyName} asusta lentamente");
-        throw new System.NotImplementedException();
+    }
+
+       private void OnCollisionEnter(UnityEngine.Collision other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Attack();
+        }
     }
 }

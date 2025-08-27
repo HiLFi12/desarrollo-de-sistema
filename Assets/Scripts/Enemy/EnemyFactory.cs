@@ -26,7 +26,7 @@ public class EnemyFactory : MonoBehaviour
 
         foreach (var type in enemyTypes)
         {
-            cumulative += type.SpawnChance;
+            cumulative += type.spawnChance;
             if (rand <= cumulative)
             {
                 return type;
