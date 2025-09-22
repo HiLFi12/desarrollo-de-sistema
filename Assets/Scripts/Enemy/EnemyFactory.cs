@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyFactory : MonoBehaviour
 {
     public EnemySpawnData[] enemyTypes;
-    public string id; 
+    
 
     public IEnemy CreateEnemy(Vector3 position, Quaternion rotation)
     {
