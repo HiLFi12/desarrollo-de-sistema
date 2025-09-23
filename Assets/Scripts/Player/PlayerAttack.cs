@@ -28,8 +28,7 @@ public class PlayerAttack : MonoBehaviour
                 break;
         }
     }
-
-    // Nueva sobrecarga: equipar directamente la instancia creada por el factory
+    
     public void EquipWeapon(Weapon weapon)
     {
         if (weapon != null)
