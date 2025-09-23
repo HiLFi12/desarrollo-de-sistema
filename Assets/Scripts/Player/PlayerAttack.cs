@@ -6,7 +6,7 @@ public class PlayerAttack : MonoBehaviour
 {
     private IAttackStrategy _currentStrategy;
 
-    public void EquipWeapon( string weaponType)
+    public void EquipWeapon(string weaponType)
     {
         switch (weaponType.ToLower())
         {
@@ -26,7 +26,16 @@ public class PlayerAttack : MonoBehaviour
                 _currentStrategy = null;
                 Debug.Log("No se equipo nada");
                 break;
+        }
+    }
 
+    // Nueva sobrecarga: equipar directamente la instancia creada por el factory
+    public void EquipWeapon(Weapon weapon)
+    {
+        if (weapon != null)
+        {
+            _currentStrategy = weapon;
+            Debug.Log("Equipped weapon prefab: " + weapon.Id);
         }
     }
 
@@ -53,7 +62,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             PerformAttack();
         }
